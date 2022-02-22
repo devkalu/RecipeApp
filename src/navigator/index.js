@@ -22,6 +22,13 @@ const defaultNavigationOptions = {
   headerStyle: {
     backgroundColor: Platform.OS === "android" ? Colors.primary : "white",
   },
+  headerBackTitleStyle: {
+    fontFamily: "poppins-regular",
+  },
+  headerTitleStyle: {
+    fontFamily: "poppins-bold",
+  },
+
   headerTintColor: Platform.OS === "ios" ? Colors.primary : "white",
 };
 
@@ -108,6 +115,9 @@ const BottomTabRoutes = {
 
 const BottomTabRouteConfig = {
   tabBarOptions: {
+    labelStyle: {
+      fontFamily: "poppins-bold",
+    },
     activeTintColor: Colors.primary,
   },
 };

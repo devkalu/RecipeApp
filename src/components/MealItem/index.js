@@ -10,6 +10,7 @@ import {
 
 import styles from "./styles";
 import ShadowCard from "../ShadowCard";
+import DefaultText from "../DefaultText";
 
 const MealItem = ({ item, onSelect }) => {
   let TouchableComponent = TouchableOpacity;

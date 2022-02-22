@@ -7,8 +7,19 @@ import { enableScreens } from "react-native-screens";
 import { fetchFonts } from "./src/constants/fonts";
 import Navigator from "./src/navigator";
 
+//Reducer stuff
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
+import mealsReducer from "./src/store/reducer";
+
 //for perfomance optimization
 enableScreens();
+
+const rootReducer = combineReducers({
+  meal: mealsReducer,
+});
+
+const store = createStore(rootReducer);
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -25,9 +36,8 @@ export default function App() {
   }
 
   return (
-    <>
+    <Provider store={store}>
       <Navigator />
-      <StatusBar style="auto" />
-    </>
+    </Provider>
   );
 }
